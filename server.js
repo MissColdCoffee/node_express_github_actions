@@ -7,7 +7,7 @@ const SERVER_HOST = "localhost"
 
 app.use(express.json()) // for parsing application/json
 app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
-
+app.use(express.static("./views"));
 
 //http://localhost:3000/
 app.get('/', function (req, res) {
@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 })
 
 //http://localhost:3000/name
-app.post('/name', function(req, res) {
+app.get('/name', function(req, res) {
   res.send("<h1>C0872528 - Anupama Rajendran</h1>")
 })
 
